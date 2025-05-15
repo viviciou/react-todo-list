@@ -7,7 +7,9 @@ type UseTodoFunc = () => {
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
   fetchTodos: () => Promise<Todo[]>;
   updataTodo: (item: Todo) => Promise<void>;
+  adddataTodo: (text: string) => Promise<void>;
 };
+// type PostTodo = Omit<Todo, "userId">;
 
 const API_URL = "https://jsonplaceholder.typicode.com/todos";
 const useTodos: UseTodoFunc = () => {
@@ -15,7 +17,7 @@ const useTodos: UseTodoFunc = () => {
 
   const fetchTodos = async (): Promise<Todo[]> => {
     try {
-      const response = await fetch(`${API_URL}?userId=1`);
+      const response = await fetch(`${API_URL}`);
       if (!response) {
         throw new Error("Network response was not ok");
       }
@@ -48,6 +50,31 @@ const useTodos: UseTodoFunc = () => {
     }
   };
 
+  const adddataTodo = async (text: string) => {
+    const newTodo: Todo = {
+      userId: 1,
+      id: todos.length + 1,
+      title: text,
+      completed: false,
+    };
+    try {
+      const response = await fetch(`${API_URL}`, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+        body: JSON.stringify(newTodo),
+      });
+      if (!response) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setTodos((prevTodos) => [...prevTodos, data]); // 確保新增的資料被加入到狀態中
+    } catch (error) {
+      console.error("Error updating todo:", error);
+    }
+  };
+
   useEffect(() => {
     const fetchAndSetTodo = async () => {
       const data = await fetchTodos();
@@ -61,6 +88,7 @@ const useTodos: UseTodoFunc = () => {
     setTodos,
     fetchTodos,
     updataTodo,
+    adddataTodo,
   };
 };
 export default useTodos;

@@ -6,8 +6,12 @@ import useTodos from "./hooks/useTodo";
 function App() {
   const { todos, updataTodo, adddataTodo } = useTodos();
   const LINE_LIMIT = 5;
-  const unCompletedTodos = todos.filter((todo) => todo.completed === false);
-  const completedTodos = todos.filter((todo) => todo.completed === true);
+  const unCompletedTodos = todos
+    .filter((todo) => todo.userId === 1 && todo.completed === false)
+    .sort((a, b) => b.id - a.id);
+  const completedTodos = todos.filter(
+    (todo) => todo.userId === 1 && todo.completed === true
+  );
   const [showUnCompletedTodosMoreButton, setShowUnCompletedTodosMoreButton] =
     useState(unCompletedTodos.length < LINE_LIMIT);
   const [showCompletedTodosMoreButton, setShowCompletedTodosMoreButton] =
