@@ -2,6 +2,7 @@ import { useState } from "react";
 import AddNewTodoInput from "./components/AddNewTodoInput";
 import List from "./components/List";
 import useTodos from "./hooks/useTodo";
+import Dialogue from "./components/Dialogue";
 
 function App() {
   const { todos, updataTodo, adddataTodo } = useTodos();
@@ -20,8 +21,11 @@ function App() {
   return (
     <>
       <div className="flex flex-col font-mono bg-amber-50">
-        <div className="bg-amber-300 rounded-2xl m-4 p-8">abc</div>
+        <Dialogue title={`I'm title`} description={`...description`} />
         <AddNewTodoInput handleAddTodoSubmit={adddataTodo} />
+        <div className="px-6 py-3 text-3xl">
+          My <span className="font-black">Goals</span>
+        </div>
         <List
           title="Mission"
           items={

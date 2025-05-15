@@ -18,7 +18,7 @@ const List = ({
 }: ListProps) => {
   return (
     <div>
-      <div className="font-bold text-gray-800 p-2">{title}</div>
+      <div className="font-bold text-gray-800 px-6">{title}</div>
       {items.map((item) => (
         <ListItem
           key={item.id}
