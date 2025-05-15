@@ -1,17 +1,20 @@
-import ListItem from "../ListItem";
 import type { Todo } from "../ListItem/listItem.types";
+import ListItem from "../ListItem";
+import ShowMoreToggle from "../ShowMoreToggle";
 
 type ListProps = {
   title: string;
   items: Todo[];
   showMoreButton: boolean;
   handleCheckBoxChange: (item: Todo) => void;
+  setShowMoreButton: React.Dispatch<React.SetStateAction<boolean>>;
 };
 const List = ({
   title,
   items,
   showMoreButton,
   handleCheckBoxChange,
+  setShowMoreButton,
 }: ListProps) => {
   return (
     <div>
@@ -23,11 +26,10 @@ const List = ({
           handleCheckBoxChange={handleCheckBoxChange}
         />
       ))}
-      {showMoreButton && (
-        <div className="flex justify-end py-2 px-8 ">
-          <span className=" text-gray-400">... read more</span>
-        </div>
-      )}
+      <ShowMoreToggle
+        showMore={showMoreButton}
+        onToggle={() => setShowMoreButton(!showMoreButton)}
+      />
     </div>
   );
 };
