@@ -22,11 +22,11 @@ const AddNewTodoInput = ({ handleAddTodoSubmit }: AddNewTodoInputProps) => {
         value={inputValue}
         onChange={handleInputChange}
         placeholder="Add a new todo"
-        className="border border-gray-300 rounded p-2 flex-grow mr-2"
+        className=" border border-gray-300 focus:border-amber-500 focus:outline focus:outline-amber-500 rounded p-2 flex-grow mr-2"
       />
       <button
         onClick={handleAddTodo}
-        className="bg-blue-500 text-white rounded px-4 py-2"
+        className="bg-amber-500 text-white rounded px-4 py-2"
       >
         Add
       </button>
