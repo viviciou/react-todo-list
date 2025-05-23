@@ -14,7 +14,7 @@ const ListItem = ({ item, handleCheckBoxChange }: ListItemProps) => {
           className="accent-yellow-500"
           type="checkbox"
           checked={completed}
-          onClick={() => {
+          onChange={() => {
             handleCheckBoxChange({ ...item, completed: !completed });
           }}
         />

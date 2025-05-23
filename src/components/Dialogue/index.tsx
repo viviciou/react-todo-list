@@ -9,7 +9,7 @@ const Dialogue = ({ title, description }: DialogueProps) => {
         </div>
         <div className="p-2 text-gray-700 opacity-65">{description}</div>
       </div>
-      <div className="relative w-14 h-14 mb-8 bg-amber-300 width-500 height-400 overflow-hidden">
+      <div className="relative w-14 h-14 mb-8 bg-amber-300 overflow-hidden">
         <div className="break-before absolute left-0  w-25 h-25 bg-amber-50 rounded-full" />
       </div>
     </>

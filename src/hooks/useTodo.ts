@@ -71,7 +71,7 @@ const useTodos: UseTodoFunc = () => {
       const data = await response.json();
       setTodos((prevTodos) => [...prevTodos, data]); // 確保新增的資料被加入到狀態中
     } catch (error) {
-      console.error("Error updating todo:", error);
+      console.error("Error adding todo:", error);
     }
   };
 
