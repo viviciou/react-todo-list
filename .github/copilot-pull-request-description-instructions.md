@@ -1,36 +1,38 @@
-# Reviewer Checklist
+# 🤖 Copilot Pull Request Description Guidelines
 
-Please use the following checklist when reviewing a Pull Request to ensure code quality and project consistency:
+Please follow the structure below when writing a Pull Request description. It helps reviewers quickly understand the purpose and scope of your changes.
 
-## 📋 Review Checklist
+---
 
-- [ ] All unit tests pass
-- [ ] Functionality has been tested locally
-- [ ] Relevant documentation is updated (if needed)
-- [ ] Code follows project style guidelines
+## ✨ What’s Changed
 
-## 🚀 Features / 📝 Changes
+- Describe any new features, modules, or components added
+- List bugs that were fixed
+- If the change involves refactoring, briefly explain the reason and the main adjustments
 
-Briefly describe the main changes or features introduced in this PR:
+## 📸 UI Changes (If Applicable)
 
--
+Include screenshots or screen recordings (e.g., GIFs or Loom) if there are any UI-related updates.
 
-## 🧪 Testing
+## 🧪 How to Test
 
-Describe how you verified these changes:
+1. Describe how to start the development environment (e.g., `npm run dev`)
+2. Outline the steps to reproduce the change
+3. Explain how to verify the expected behavior
 
--
+## ✅ Checklist
+
+- [ ] Linting and formatting checks passed
+- [ ] Edge cases considered and handled
+- [ ] Related documentation updated (if needed)
+- [ ] No breaking changes (or explain if any)
 
 ## 🔗 Related Issues
 
-List any related issues (if applicable):
+- Closes #123
+- Related to #456
 
--
+## 💬 Notes (Optional)
 
-## 📸 Screenshots / Videos (if applicable)
-
-<Provide screenshots or short videos demonstrating the feature>
-
-## 💡 Additional Notes
-
--
+- Anything that needs special attention from the reviewer?
+- Are there any known issues or future considerations?
