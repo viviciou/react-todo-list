@@ -2,6 +2,9 @@
 
 A simple and customizable Todo List application built with React.
 
+<img width="512" alt="Screenshot 2025-05-24 at 12 42 22 PM" src="https://github.com/user-attachments/assets/795eccd6-1099-4306-9e4f-0a28f6cef316" />
+
+
 ## 🚀 Features
 
 - Add, edit, and delete todo items
